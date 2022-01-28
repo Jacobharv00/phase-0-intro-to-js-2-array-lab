@@ -1,47 +1,36 @@
-// Write your solution here!
+const cats = [ 'Milo', 'Otis', 'Garfield' ]
 
-const cats = ['Milo', 'Otis', 'Garfield']
+// Destructive Functions
+const destructivelyAppendCat = ( name ) => cats.push( name )
 
-function destructivelyAppendCat(name) {
-    cats.push(name)
-    return cats
+const destructivelyPrependCat = ( name ) => cats.unshift( name )
+
+const destructivelyRemoveLastCat = ( name ) => cats.pop( name )
+
+const destructivelyRemoveFirstCat = ( name ) => cats.shift( name )
+
+
+// Non-Destructive Functions
+const appendCat = ( name ) => {
+  let newArray = [ ...cats ]
+  newArray.push( name )
+  return newArray
 }
 
-function destructivelyPrependCat(name) {
-    cats.unshift(name)
-    return cats
+const prependCat = ( name ) => {
+  let newArray = [ ...cats ]
+  newArray.unshift( name )
+  return newArray
 }
 
-function destructivelyRemoveLastCat(name) {
-    cats.pop(name)
-    return cats
+function removeLastCat ( name ) {
+  let newArray = [ ...cats ]
+  newArray.pop( name )
+  return newArray
 }
 
-function destructivelyRemoveFirstCat(name) {
-    cats.shift(name)
-    return cats
-}
-
-function appendCat(name) {
-    let newArray = cats.slice()
-    newArray.push(name)
-    return newArray
-}
-
-function prependCat(name) {
-    let newArray = cats.slice()
-    newArray.unshift(name)
-    return newArray
-}
-
-function removeLastCat(name) {
-    let newArray = cats.slice()
-    newArray.pop(name)
-    return newArray
-}
-
-function removeFirstCat(name) {
-    let newArray = cats.slice()
-    newArray.shift(name)
-    return newArray
+function removeFirstCat ( name ) {
+  let newArray = [ ...cats ]
+  newArray.shift( name )
+  return newArray
 }
